@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 const BlogDetail = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative bg-floralwhite w-full h-[3400px] overflow-hidden text-left text-3xl text-dimgray-200 font-poppins">
       <div className="absolute top-[55px] left-[869px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/dashboard')}}>
