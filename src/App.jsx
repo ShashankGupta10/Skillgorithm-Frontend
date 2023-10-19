@@ -13,6 +13,7 @@ import CourseDetail from "./components/CourseDetail";
 import Search from "./components/Search";
 import BlogPage from "./components/BlogPage";
 import BlogDetail from "./components/BlogDetail";
+import Auth from "./pages/Auth"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path="/" element={<Homepage />} />
+      <Route path="/auth" element={<Auth />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/explore" element={<Search />} />
         <Route path="/explore/course" element={<CourseDetail />} />

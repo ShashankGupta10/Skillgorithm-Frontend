@@ -1,8 +1,23 @@
+import axios from "axios";
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const [certificate, setCertificate] = useState(null)
   const navigate = useNavigate();
+  const handleCert = () => {
+    console.log("first");
+    axios.post("http://localhost:3001/api/v1/user/cert", {
+      name: "Shashnak",
+      course_name: "UI/UX"
+    })
+    .then((res) => {
+        setCertificate(res.data);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+}
 
   return (
     <>
@@ -613,7 +628,7 @@ const Dashboard = () => {
             alt=""
             src="/rectangle-10.svg"
           />
-          <div className="absolute top-[39.96px] left-[873.26px] rounded-lg box-border w-[220.06px] h-[79.93px] border-[2px] border-solid border-black" />
+          <div className="absolute top-[39.96px] left-[873.26px] rounded-lg box-border w-[220.06px] h-[79.93px] border-[2px] border-solid border-black" onClick={handleCert}/>
           <div className="absolute top-[38.7px] left-[176.97px] font-caption-2 inline-block w-[238.4px] h-[51.95px]">
             Basics of drawing
           </div>
@@ -626,7 +641,7 @@ const Dashboard = () => {
           <div className="absolute top-[69.3px] left-[565.53px] text-xl inline-block w-[113.7px] h-[29.97px]">
             11h 30min
           </div>
-          <b className="absolute top-[65.05px] left-[917.41px] inline-block text-center w-[132.04px] h-[29.97px] hover:cursor-pointer" onClick={()=>{navigate('/dashboard')}}>
+          <b className="absolute top-[65.05px] left-[917.41px] inline-block text-center w-[132.04px] h-[29.97px] hover:cursor-pointer" >
             Completed
           </b>
           <img

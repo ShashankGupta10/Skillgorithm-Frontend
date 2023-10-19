@@ -102,7 +102,7 @@ const Homepage = () => {
         </nav>
         <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[47px] left-[1534px] w-[191px] h-[65px] hover:animate-[1s_ease_0s_1_normal_none_shadow-drop-bottom] hover:opacity-[1]">
           <div className="absolute top-[0px] left-[0px] rounded-[218px] bg-mediumseagreen w-[191px] h-[65px]" />
-          <div className="absolute top-[18px] left-[57px] text-6xl font-medium font-caption text-white text-left hover:cursor-pointer" onClick={()=>{navigate('/')}} >
+          <div className="absolute top-[18px] left-[57px] text-6xl font-medium font-caption text-white text-left hover:cursor-pointer" onClick={()=>navigate('/auth')} >
             Sign in
           </div>
         </button>
