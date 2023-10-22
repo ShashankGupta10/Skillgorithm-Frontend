@@ -32,6 +32,10 @@ Welcome to Skillgorithm, our Visual Learning Platform project! This platform off
 ### Payment Gateway Integration
 - Seamlessly complete course purchases using our integrated payment gateway.
 
+## Also for certificate generation we have collaborated with certisure a certificate providing platform
+
+### Checkout the walkthrough of our project here:
+[![Video]]([https://www.youtube.com/watch?v=VID](https://youtu.be/RJe5WDdBlEU))
 
 ## Tech Stack
 
