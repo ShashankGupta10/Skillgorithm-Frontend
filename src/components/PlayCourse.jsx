@@ -3,13 +3,17 @@ import { useNavigate } from "react-router-dom";
 
 const PlayCourse = () => {
   const navigate = useNavigate();
+  const handleclickss = ()=>{
+    const htmlFileUrl1 ="http://127.0.0.1:3000/";
+    window.open(htmlFileUrl1, '_blank');
+  }
   const handleclick = () => {
     const htmlFileUrl = 'http://127.0.0.1:5500/src/visualization/BPlusTree.html';
     window.open(htmlFileUrl, '_blank');
     
   }
   const handleclicks = () => {
-    const htmlFileUrl = 'http://127.0.0.1:61398/src/HTML/quiz.html';
+    const htmlFileUrl = 'http://127.0.0.1:63483/src/HTML/quiz.html';
     window.open(htmlFileUrl, '_blank');
     
   }
@@ -331,7 +335,7 @@ const PlayCourse = () => {
       <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[1488px] left-[111px] w-[207px] h-[54px]">
         <div className="absolute top-[0px] left-[0px] rounded-77xl bg-mediumseagreen w-[207px] h-[55px]" />
         <div className="absolute top-[0px] left-[0px] rounded-77xl bg-mediumseagreen w-[207px] h-[55px]" />
-        <div className="absolute top-[13px] left-[33px] text-6xl font-medium font-caption text-white text-left">
+        <div className="absolute top-[13px] left-[33px] text-6xl font-medium font-caption text-white text-left" onClick={()=>{handleclickss}}>
           Connect Live
         </div>
       </button>
@@ -342,7 +346,7 @@ const PlayCourse = () => {
           specimen book.
         </div>
         <div className="absolute top-[0px] left-[632px] w-[131px] h-[227px]">
-          <div className="absolute top-[58px] left-[0px]">About Us</div>
+          <div className="absolute top-[58px] left-[0px]">Redeem</div>
           <div className="absolute top-[107px] left-[0px]">How to work?</div>
           <div className="absolute top-[156px] left-[1px]">Populer Course</div>
           <div className="absolute top-[205px] left-[1px]">Service</div>
@@ -401,14 +405,14 @@ const PlayCourse = () => {
       <div className="absolute top-[43px] left-[1181px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/explore')}}>
         Explore
       </div>
-      <div className="absolute top-[43px] left-[1009px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/dash')}}>
+      <div className="absolute top-[43px] left-[1009px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/mycourse')}}>
         My Courses
       </div>
       <div className="absolute top-[43px] left-[1352px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/blogs')}}>
         Blog
       </div>
-      <div className="absolute top-[43px] left-[1482px] tracking-[0.02em]">
-        About Us
+      <div className="absolute top-[43px] left-[1482px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/redeem')}}>
+        Redeem
       </div>
       <div className="absolute top-[46px] left-[1731px] text-mid tracking-[0.02em] font-medium text-black2">
         Pooja

@@ -30,7 +30,7 @@ const Search = () => {
           <div className="absolute top-[93px] left-[0px] w-[170px] h-[73px]">
             <div className="absolute top-[0px] left-[0px] rounded-3xs bg-floralwhite w-[170px] h-[73px]" />
             <div className="absolute top-[22px] left-[137px] leading-[32px] inline-block w-[15px] h-8">
-              
+              -
             </div>
             <div className="absolute top-[18px] left-[18px] tracking-[0.04em] font-medium text-center inline-block w-[109px]">
               Subject
@@ -39,7 +39,7 @@ const Search = () => {
           <div className="absolute top-[93px] left-[190px] w-[170px] h-[73px]">
             <div className="absolute top-[0px] left-[0px] rounded-3xs bg-floralwhite w-[170px] h-[73px]" />
             <div className="absolute top-[22px] left-[137px] leading-[32px] inline-block w-[15px] h-8">
-              
+              -
             </div>
             <div className="absolute top-[18px] left-[18px] tracking-[0.04em] font-medium text-center inline-block w-[109px]">
               Partner
@@ -49,7 +49,7 @@ const Search = () => {
             <div className="absolute top-[0px] left-[0px] rounded-3xs bg-floralwhite w-48 h-[73px]" />
             <div className="absolute top-[16px] left-[18.28px] w-[156.99px] h-9">
               <div className="absolute top-[4px] left-[140.05px] leading-[32px] inline-block w-[16.94px] h-8">
-                
+                -
               </div>
               <div className="absolute top-[0px] left-[0px] tracking-[0.04em] font-medium text-center inline-block w-[128.75px]">
                 Program
@@ -60,7 +60,7 @@ const Search = () => {
             <div className="absolute top-[0px] left-[0px] rounded-3xs bg-floralwhite w-[209px] h-[73px]" />
             <div className="absolute top-[18px] left-[18.99px] w-[176.76px] h-9">
               <div className="absolute top-[4px] left-[156.75px] leading-[32px] inline-block w-[20.01px] h-8">
-                
+                -
               </div>
               <div className="absolute top-[0px] left-[0px] tracking-[0.04em] font-medium text-center inline-block w-[143.41px]">
                 Language
@@ -70,7 +70,7 @@ const Search = () => {
           <div className="absolute top-[93px] left-[821px] w-[216px] h-[73px]">
             <div className="absolute top-[0px] left-[0px] rounded-3xs bg-floralwhite w-[216px] h-[73px]" />
             <div className="absolute top-[22px] left-[183px] leading-[32px] inline-block w-[18px] h-8">
-              
+              -
             </div>
             <div className="absolute top-[18px] left-[18px] tracking-[0.04em] font-medium text-center inline-block w-[153px]">
               Abaliability
@@ -80,7 +80,7 @@ const Search = () => {
             <div className="absolute top-[0px] left-[0px] rounded-3xs bg-floralwhite w-[267px] h-[73px]" />
             <div className="absolute top-[18px] left-[18.91px] w-[235.08px] h-9">
               <div className="absolute top-[4px] left-[211.88px] leading-[32px] inline-block w-[23.2px] h-8">
-                
+                -
               </div>
               <div className="absolute top-[0px] left-[0px] tracking-[0.04em] font-medium text-center inline-block w-[197.16px]">
                 Learning Type
@@ -97,14 +97,14 @@ const Search = () => {
           <div className="absolute top-[15px] left-[319px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/explore')}}>
             Explore
           </div>
-          <div className="absolute top-[15px] left-[147px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/dash')}}>
+          <div className="absolute top-[15px] left-[147px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/mycourse')}}>
             My Courses
           </div>
           <div className="absolute top-[15px] left-[490px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/blogs')}}>
             Blog
           </div>
-          <div className="absolute top-[15px] left-[620px] tracking-[0.02em]">
-            About Us
+          <div className="absolute top-[15px] left-[620px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/redeem')}}>
+            Redeem
           </div>
           <div className="absolute top-[18px] left-[869px] text-lg tracking-[0.02em] font-medium text-black1">
             Pooja
@@ -116,9 +116,6 @@ const Search = () => {
               alt=""
               src="/image-12@2x.png"
             />
-          </div>
-          <div className="absolute top-[23px] left-[919px] text-lg tracking-[0.02em] text-black1">
-            
           </div>
         </div>
         <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[5px] left-[0px] w-[185px] h-[51.85px]">

@@ -9,14 +9,14 @@ const BlogDetail = () => {
       <div className="absolute top-[55px] left-[1188px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/explore')}}>
         Explore
       </div>
-      <div className="absolute top-[55px] left-[1016px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/dash')}}>
+      <div className="absolute top-[55px] left-[1016px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/mycourse')}}>
         Courses
       </div>
       <div className="absolute top-[55px] left-[1359px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/blogs')}}>
         Blog
       </div>
-      <div className="absolute top-[55px] left-[1489px] tracking-[0.02em]">
-        About Us
+      <div className="absolute top-[55px] left-[1489px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/redeem')}}>
+        Redeem
       </div>
       <div className="absolute top-[58px] left-[1738px] text-lg tracking-[0.02em] font-medium text-black2">
         Pooja
@@ -230,7 +230,7 @@ const BlogDetail = () => {
           specimen book.
         </div>
         <div className="absolute top-[0px] left-[632px] w-[131px] h-[227px]">
-          <div className="absolute top-[58px] left-[0px]">About Us</div>
+          <div className="absolute top-[58px] left-[0px]">Redeem</div>
           <div className="absolute top-[107px] left-[0px]">How to work?</div>
           <div className="absolute top-[156px] left-[1px]">Populer Course</div>
           <div className="absolute top-[205px] left-[1px]">Service</div>
@@ -272,7 +272,7 @@ const BlogDetail = () => {
           </div>
         </div>
         <div className="absolute top-[291.5px] left-[-0.5px] box-border w-[1921px] h-px border-t-[1px] border-solid border-silver" />
-        <div className="absolute top-[-3px] left-[196px] w-[185px] h-[51.85px] text-5xl text-gray-500">
+        <div className="absolute top-[-3px] left-[196px] w-[185px] h-[51.85px] text-5xl text-gray-500 hover:cursor-pointer" onClick={()=>{navigate('/')}}>
           <b className="absolute top-[10px] left-[66px] leading-[135%]">
             Skillgorithm
           </b>

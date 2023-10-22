@@ -1,15 +1,34 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useStripe, useElements, Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe(
+  "pk_test_51NSlpmSAmP8EhiPliGKO2MseZUvIDXD8Nr4eCL7WHbKLMuQRhwvberx5H3Tme554ka585BZMgT7M6iKCD4D4g80e00vxlu6jZW"
+);
+import axios from "axios";
+import dsa from '../assets/dsac.jpg'
 
 const CourseDetail = () => {
   const navigate = useNavigate();
-
+  const handlePayment = (id) => {
+    axios
+      .post("http://localhost:3001/api/v1/user/payment", {
+        items: [{ id: id, quantity: 1 }],
+      })
+      .then((res) => {
+        console.log(res.data.url);
+        window.location = res.data.url;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div className="relative bg-floralwhite w-full h-[3050px] overflow-hidden text-left text-5xl text-white font-poppins">
       <div className="absolute top-[2233px] left-[139px]"></div>
       <div className="absolute top-[2077px] left-[186px] w-[1547px] h-[512px] text-slategray">
         <div className="absolute top-[51px] left-[0px] rounded-[50%] bg-mediumspringgreen w-[73px] h-[73px]" />
-        <div className="absolute top-[210px] left-[25px] tracking-[0.02em] leading-[180%] inline-block w-[730px]">
+        <div className="absolute top-[210px] left-[25px] tracking-[0.02em] leading-[180%] text-black inline-block w-[730px]">
           TOTC’s school management software helps traditional and online schools
           manage scheduling, attendance, payments and virtual classrooms all in
           one secure cloud-based system.
@@ -44,23 +63,43 @@ const CourseDetail = () => {
       </div>
       <div className="absolute top-[40px] left-[-1px] w-[1921px] h-[1735px] text-3xl text-dimgray-200">
         <div className="absolute top-[0px] left-[870px] w-[931px] h-[63px]">
-          <div className="absolute top-[15px] left-[0px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/dashboard')}}>
+          <div
+            className="absolute top-[15px] left-[0px] tracking-[0.02em] hover:cursor-pointer"
+            onClick={() => {
+              navigate("/dashboard");
+            }}
+          >
             Home
           </div>
-          <div className="absolute top-[15px] left-[319px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/explore')}}>
-            Explore 
+          <div
+            className="absolute top-[15px] left-[319px] tracking-[0.02em] hover:cursor-pointer"
+            onClick={() => {
+              navigate("/explore");
+            }}
+          >
+            Explore
           </div>
-          <div className="absolute top-[15px] left-[147px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/dash')}}>
+          <div
+            className="absolute top-[15px] left-[147px] tracking-[0.02em] hover:cursor-pointer"
+            onClick={() => {
+              navigate("/mycourse");
+            }}
+          >
             My Courses
           </div>
-          <div className="absolute top-[15px] left-[490px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/blogs')}}>
+          <div
+            className="absolute top-[15px] left-[490px] tracking-[0.02em] hover:cursor-pointer"
+            onClick={() => {
+              navigate("/blogs");
+            }}
+          >
             Blog
           </div>
-          <div className="absolute top-[15px] left-[620px] tracking-[0.02em]">
-            About Us
+          <div className="absolute top-[15px] left-[620px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/redeem')}}>
+            Redeem
           </div>
           <div className="absolute top-[18px] left-[869px] text-lg tracking-[0.02em] font-medium text-black1">
-            Lina
+            Pooja
           </div>
           <div className="absolute top-[0px] left-[791px] w-[63px] h-[63px]">
             <div className="absolute top-[0px] left-[0px] rounded-41xl bg-gainsboro-100 w-[63px] h-[63px]" />
@@ -70,16 +109,14 @@ const CourseDetail = () => {
               src="/image-12@2x.png"
             />
           </div>
-          <div className="absolute top-[23px] left-[919px] text-lg tracking-[0.02em] text-black1">
-            
-          </div>
+
         </div>
         <div className="absolute top-[105px] left-[0px] w-[1921px] h-[1630px] text-9xl text-black1">
           <div className="absolute top-[0px] left-[0px] w-[1921px] h-[653px]">
             <img
               className="absolute top-[1px] left-[1px] w-[1920px] h-[652px] object-cover"
               alt=""
-              src="/rectangle-77@2x.png"
+              src={dsa}
             />
             <div className="absolute top-[0px] left-[1px] bg-gray-1000 w-[1920px] h-[652px]" />
           </div>
@@ -99,14 +136,17 @@ const CourseDetail = () => {
                 <div className="absolute top-[1220.58px] left-[30px] w-8 h-[32.58px]" />
               </div>
               <div className="absolute top-[321.69px] left-[30px] w-[442px] h-[488.13px]">
-                <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[172.31px] left-[12px] w-[417px] h-[60px]">
+                <button
+                  className="z-50 cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[172.31px] left-[12px] w-[417px] h-[60px] hover:cursor-pointer"
+                  onClick={() => handlePayment(1)}
+                >
                   <div className="absolute top-[0px] left-[0px] rounded-xl bg-mediumseagreen w-[417px] h-[60px]" />
                   <b className="absolute top-[12.96px] left-[164px] text-xl inline-block font-poppins text-white text-left w-[90px] h-[30.54px]">
                     Buy Now
                   </b>
                 </button>
                 <div className="absolute top-[0px] left-[8px] text-[45px] tracking-[0.02em] font-semibold inline-block w-[165px] h-[67.19px]">
-                  $49.65
+                  ₹800
                 </div>
                 <div className="absolute top-[12.22px] left-[318px] tracking-[0.02em] font-semibold text-gray-900 inline-block w-[124px] h-[34.61px]">
                   50% Off
@@ -256,7 +296,7 @@ const CourseDetail = () => {
           specimen book.
         </div>
         <div className="absolute top-[0px] left-[632px] w-[131px] h-[227px]">
-          <div className="absolute top-[58px] left-[0px]">About Us</div>
+          <div className="absolute top-[58px] left-[0px]">Redeem</div>
           <div className="absolute top-[107px] left-[0px]">How to work?</div>
           <div className="absolute top-[156px] left-[1px]">Populer Course</div>
           <div className="absolute top-[205px] left-[1px]">Service</div>
@@ -298,10 +338,10 @@ const CourseDetail = () => {
           </div>
         </div>
         <div className="absolute top-[291.5px] left-[-0.5px] box-border w-[1921px] h-px border-t-[1px] border-solid border-silver" />
-        <div className="absolute top-[-3px] left-[196px] w-[185px] h-[51.85px] text-5xl text-gray-500">
-          <b className="absolute top-[10px] left-[66px] leading-[135%]">
+        <div className="absolute top-[-3px] left-[196px] w-[185px] h-[51.85px] text-5xl text-gray-500 ">
+          <div className="absolute top-[10px] left-[66px] leading-[135%] hover:cursor-pointer" onClick={()=>{navigate('/')}}>
             Skillgorithm
-          </b>
+          </div>
           <img
             className="absolute h-full w-[31.78%] top-[0%] right-[68.22%] bottom-[0%] left-[0%] max-w-full overflow-hidden max-h-full"
             alt=""
@@ -313,31 +353,31 @@ const CourseDetail = () => {
         <div className="absolute top-[829px] left-[0px] w-[872px] h-[314px] text-5xl text-midnightblue">
           <div className="absolute top-[65px] left-[0px] w-[815px] h-[39px]">
             <div className="absolute top-[0px] left-[27px] leading-[30px] inline-block w-[788px] h-[39px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            Introduction to B+ trees
             </div>
             <div className="absolute top-[7.72px] left-[0px] rounded-[50%] bg-tomato w-[13.29px] h-[13.22px]" />
           </div>
           <div className="absolute top-[116px] left-[0px] w-[732px] h-10">
             <div className="absolute top-[0px] left-[27px] leading-[30px] inline-block w-[705px] h-10">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            Insertion in B+ trees
             </div>
             <div className="absolute top-[9.61px] left-[0px] rounded-[50%] bg-tomato w-[13.29px] h-[13.22px]" />
           </div>
           <div className="absolute top-[169px] left-[0px] w-[872px] h-10">
             <div className="absolute top-[0px] left-[28px] leading-[30px] inline-block w-[844px] h-10">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            Deletion in B+ trees
             </div>
             <div className="absolute top-[9.5px] left-[0px] rounded-[50%] bg-tomato w-[14.21px] h-[13.22px]" />
           </div>
           <div className="absolute top-[222px] left-[0px] w-[749px] h-10">
             <div className="absolute top-[0px] left-[27px] leading-[30px] inline-block w-[722px] h-10">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            Searching in B+ Trees
             </div>
             <div className="absolute top-[9.39px] left-[0px] rounded-[50%] bg-tomato w-[13.29px] h-[13.22px]" />
           </div>
           <div className="absolute top-[274px] left-[0px] w-[724px] h-10">
             <div className="absolute top-[0px] left-[27px] leading-[30px] inline-block w-[697px] h-10">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            Algorithm and Analysis
             </div>
             <div className="absolute top-[10.28px] left-[0px] rounded-[50%] bg-tomato w-[13.29px] h-[13.22px]" />
           </div>
@@ -393,17 +433,19 @@ const CourseDetail = () => {
         />
       </button>
       <img
-        className="absolute h-[57.21%] w-[90.71%] top-[26.89%] right-[4.27%] bottom-[15.9%] left-[5.02%] max-w-full overflow-hidden max-h-full"
+        className=" absolute h-[57.21%] w-[90.71%] top-[26.89%] right-[4.27%] bottom-[15.9%] left-[5.02%] max-w-full overflow-hidden max-h-full"
         alt=""
         src="/group-356.svg"
-      />
-      <img
-        className="absolute h-[5.8%] w-[8.39%] top-[25.15%] right-[91.61%] bottom-[69.05%] left-[0%] max-w-full overflow-hidden max-h-full"
-        alt=""
-        src="/group5.svg"
       />
     </div>
   );
 };
 
-export default CourseDetail;
+const StripeWrapper1 = () => {
+  return (
+    <Elements stripe={stripePromise}>
+      <CourseDetail />
+    </Elements>
+  );
+};
+export default StripeWrapper1;

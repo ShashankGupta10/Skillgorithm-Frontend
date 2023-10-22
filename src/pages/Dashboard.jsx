@@ -1,26 +1,52 @@
 import axios from "axios";
 import { React, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import certificate from '../assets/certificate.jpeg'
 
 const Dashboard = () => {
-  const [certificate, setCertificate] = useState(null)
+  const [visible,setvisible] = useState(false);
+  // const [certificate, setCertificate] = useState(null)
   const navigate = useNavigate();
+  const close = () => {
+    setvisible(false);
+  }
+  const handleDownload = () => {
+    if (certificate) {
+      const downloadLink = document.createElement('a');
+      downloadLink.href = profile;
+      downloadLink.download = './certificate.jpg'; // Set the desired filename for the download
+      downloadLink.click();
+    }
+  }
   const handleCert = () => {
-    console.log("first");
-    axios.post("http://localhost:3001/api/v1/user/cert", {
-      name: "Shashnak",
-      course_name: "UI/UX"
-    })
-    .then((res) => {
-        setCertificate(res.data);
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+    // console.log("first");
+    // axios.post("http://localhost:3001/api/v1/user/cert", {
+    //   name: "John Doe",
+    //   course_name: "Analog Photography"
+    // })
+    
+    // .then((res) => {
+    //     setCertificate(res.data.message);
+    //     setvisible(true);
+    // })
+    // .catch((err) => {
+    //     console.log(err);
+    // });
+    // console.log("first");
+    setvisible(true);
+ 
 }
 
   return (
     <>
+      {visible && (
+        <div className="fixed top-[10%] left-[25%] w-[1000px] h-[800px] bg-white z-50 rounded-41xl">
+          <button className="relative left-[90%] top-32 hover:cursor-pointer border-gray-600 border-2 p-2 rounded-md" onClick={close}>Close</button>
+          <button className="relative left-[60%] top-32 hover:cursor-pointer border-gray-600 border-2 p-2 rounded-md z-50" onClick={handleDownload}>Download</button>
+
+          <img src={certificate} alt="hjsdhi" className="relative top-[50px] overflow-hidden w-[800px] h-[600px]" />
+        </div>
+      )}
      <div className="relative bg-floralwhite w-full h-[4100px] overflow-hidden text-left text-3xl text-dimgray-200 font-poppins">
       <div className="absolute top-[55px] left-[869px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/dashboard')}}>
         Home
@@ -28,20 +54,17 @@ const Dashboard = () => {
       <div className="absolute top-[55px] left-[1188px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/explore')}}>
         Explore
       </div>
-      <div className="absolute top-[55px] left-[1016px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/dash')}}>
-        Courses
+      <div className="absolute top-[55px] left-[1016px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/mycourse')}}>
+        My Courses
       </div>
       <div className="absolute top-[55px] left-[1359px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/blogs')}}>
         Blog
       </div>
-      <div className="absolute top-[55px] left-[1489px] tracking-[0.02em]">
-        About Us
+      <div className="absolute top-[55px] left-[1489px] tracking-[0.02em] hover:cursor-pointer" onClick={()=>{navigate('/redeem')}}>
+        Redeem
       </div>
       <div className="absolute top-[58px] left-[1738px] text-lg tracking-[0.02em] font-medium text-black1">
         Pooja
-      </div>
-      <div className="absolute top-[63px] left-[1788px] text-lg tracking-[0.02em] font-font-awesome-5-free text-black1">
-        
       </div>
       <img
         className="absolute top-[143px] left-[0px] w-[1920px] h-[785px] opacity-[0.2] mix-blend-normal"
@@ -68,8 +91,8 @@ const Dashboard = () => {
             alt=""
             src="/rectangle-87.svg"
           />
-          <div className="absolute top-[11px] left-[89px]"></div>
-          <div className="absolute top-[11px] left-[19px]"></div>
+          <div className="absolute top-[11px] left-[89px]">&gt;</div>
+          <div className="absolute top-[11px] left-[19px]">&lt;</div>
         </div>
         <div className="absolute top-[0px] left-[0px] w-[1687px] h-[578px] text-17xl text-gray-400 font-poppins">
           <div className="absolute top-[0px] left-[0px] font-semibold inline-block w-[966px]">
@@ -93,7 +116,7 @@ const Dashboard = () => {
                   </div>
                 </div>
                 <div className="absolute top-[354px] left-[82px] text-lg tracking-[0.02em] font-medium text-black1 inline-block w-[42.73px] h-[30.36px]">
-                  Sudeshna
+                  Gouri
                 </div>
                 <div className="absolute top-[348px] left-[25px] w-[42px] h-[42px]">
                   <div className="absolute top-[0px] left-[0px] rounded-41xl bg-gainsboro w-[42px] h-[42px]" />
@@ -579,14 +602,14 @@ const Dashboard = () => {
         />
       </div>
       <div className="absolute top-[896px] left-[119px] w-[1137px] h-[1108px] text-5xl text-black font-caption">
-        <div className="absolute top-[948.14px] left-[0px] w-[1137px] h-[159.86px] text-smi">
+        <div className="absolute top-[948.14px] left-[0px] w-[1137px] h-[159.86px]">
           <img
             className="absolute top-[0px] left-[0px] rounded-sm w-[1137px] h-[159.86px]"
             alt=""
             src="/rectangle-11.svg"
           />
           <div className="absolute top-[39.96px] left-[873.26px] rounded-lg box-border w-[220.06px] h-[79.93px] border-[2px] border-solid border-black" />
-          <b className="absolute top-[65.05px] left-[917.41px] inline-block w-[132.04px] h-[29.97px]">
+          <b className="absolute top-[65.05px] left-[917.41px] font-semibold inline-block w-[150.04px] h-[29.97px]">
             View course
           </b>
           <img
@@ -597,7 +620,7 @@ const Dashboard = () => {
           <div className="absolute top-[39.33px] left-[176.97px] text-base font-caption-2 inline-block w-[276.91px] h-[51.95px]">
             Photoshop - Essence
           </div>
-          <div className="absolute top-[93.29px] left-[176.97px] inline-block w-[159.55px] h-[29.97px]">
+          <div className="absolute top-[93.29px] left-[176.97px] inline-block w-[159.55px] h-[29.97px] text-smi">
             by David Green
           </div>
           <div className="absolute top-[69.94px] left-[779.31px] inline-block w-[33.01px] h-[29.97px]">
@@ -628,7 +651,7 @@ const Dashboard = () => {
             alt=""
             src="/rectangle-10.svg"
           />
-          <div className="absolute top-[39.96px] left-[873.26px] rounded-lg box-border w-[220.06px] h-[79.93px] border-[2px] border-solid border-black" onClick={handleCert}/>
+          <div className="absolute top-[39.96px] left-[873.26px] rounded-lg box-border w-[220.06px] h-[79.93px] border-[2px] border-solid border-black "/>
           <div className="absolute top-[38.7px] left-[176.97px] font-caption-2 inline-block w-[238.4px] h-[51.95px]">
             Basics of drawing
           </div>
@@ -727,7 +750,8 @@ const Dashboard = () => {
           <div className="absolute top-[69.3px] left-[567.01px] text-xl inline-block w-[100.86px] h-[29.97px]">
             3h 15min
           </div>
-          <b className="absolute top-[65.05px] left-[917.41px] inline-block text-center w-[132.04px] h-[29.97px]">
+          {/* main*/}
+          <b className="absolute top-[65.05px] left-[917.41px] inline-block text-center w-[132.04px] h-[29.97px] hover:cursor-pointer" onClick={handleCert}>
             Completed
           </b>
           <img

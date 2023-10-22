@@ -96,14 +96,19 @@ const Homepage = () => {
           <div className="absolute top-[0px] left-[324px] font-semibold">
             Our Service
           </div>
-          <div className="absolute top-[0px] left-[463px] font-semibold">
+          <div className="absolute top-[0px] left-[463px] w-96 font-semibold">
             Contact us
           </div>
         </nav>
+        <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[47px] left-[1734px] w-[110px] h-[65px] hover:animate-[1s_ease_0s_1_normal_none_shadow-drop-bottom] hover:opacity-[1]">
+          <div className="absolute top-[0px] left-[0px] rounded-[218px] bg-darkslateblue-100 w-[70px] h-[65px]" />
+          <div className="absolute top-[18px] left-[27px] text-6xl font-medium font-caption text-white text-left hover:cursor-pointer" onClick={()=>navigate('/admin')} >
+          A</div>
+        </button>
         <button className="cursor-pointer [border:none] p-0 bg-[transparent] absolute top-[47px] left-[1534px] w-[191px] h-[65px] hover:animate-[1s_ease_0s_1_normal_none_shadow-drop-bottom] hover:opacity-[1]">
           <div className="absolute top-[0px] left-[0px] rounded-[218px] bg-mediumseagreen w-[191px] h-[65px]" />
           <div className="absolute top-[18px] left-[57px] text-6xl font-medium font-caption text-white text-left hover:cursor-pointer" onClick={()=>navigate('/auth')} >
-            Sign in
+            Sign In
           </div>
         </button>
         <div className="absolute top-[348px] left-[194px] w-[586px] h-[297px] flex flex-col items-center justify-start gap-[9px] text-50xl font-caption">
