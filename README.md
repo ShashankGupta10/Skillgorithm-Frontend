@@ -36,6 +36,13 @@ Welcome to Skillgorithm, our Visual Learning Platform project! This platform off
 
 ### Checkout the walkthrough of our project here:
 
+
+https://github.com/ShashankGupta10/Skillgorithm-Frontend/assets/106877570/0c39f4c2-ea7b-4d52-bb50-bf68bc9c2b47
+
+
+https://www.youtube.com/watch?v=RJe5WDdBlEU <- Here's the youtube link for higher quality
+
+
 ## Tech Stack
 
 - **Frontend**: React
